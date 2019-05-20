@@ -20,6 +20,7 @@ namespace Tic_Tac_Toe
             }
         }
 
+        //main method
         static void Main(string[] args)
         {            
             introduction();
@@ -41,12 +42,15 @@ namespace Tic_Tac_Toe
             goodBye();
         }
 
+        //exit message
         static void goodBye()
         {
             Console.WriteLine("Thanks for playing");
             Console.ReadLine();
         }
 
+
+        //recieve the user position on the board
         static void askData(String player)
         {
             Console.Clear();
@@ -66,12 +70,14 @@ namespace Tic_Tac_Toe
             board[selection] = player;
         }
 
+        //to create the board for the game
         static void drawBoard()
         {
             for (int i =0; i < 9; i+=3)
                 Console.WriteLine(board[i] + "|" + board[i + 1] + "|" + board[i + 2]);
         }
 
+        //display message after user hhas finished a round
         static void playAgainMsg(string message)
         {
             Console.WriteLine("Do you want to play again (y / n)");
@@ -81,6 +87,7 @@ namespace Tic_Tac_Toe
                 playsAgain.Equals("N");
         }
 
+        //check if any user has won
         static Boolean hasWon()
         {
             for (int i = 0; i < 7; i += 3)
@@ -109,10 +116,14 @@ namespace Tic_Tac_Toe
             return false;
         }
 
+        //welcome code
         static void introduction()
         {
             Console.Title = ("Tic Tac Toes Verion 1.0");
-            Console.WriteLine("Welcome To Tic Tac Toe");
+            Console.WriteLine("=========================");
+            Console.WriteLine("||Welcome To Tic Tac Toe||");
+            Console.WriteLine("||   X         O        ||");
+            Console.WriteLine("=========================");
             Console.WriteLine("Press any Key to Continue");
             Console.ReadLine();
             Console.Clear();
